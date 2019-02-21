@@ -1,0 +1,48 @@
+<html>
+<head>
+  <script type="text/javascript">
+    window.onload = setInterval(clock,1000);
+
+    function clock()
+    {
+	  var d = new Date();
+	  
+	  var date = d.getDate();
+	  
+	  var month = d.getMonth();
+	  var month_arr =["Jan","Feb","Mar","April","May","June","July","Aug","Sep","Oct","Nov","Dec"];
+	  month=month_arr[month];
+	  
+	  var year = d.getFullYear();
+	  
+	  var day = d.getDay();
+	  var day_arr =["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+	  day=day_arr[day];
+	  
+	  var hour =d.getHours();
+      var min = d.getMinutes();
+	  var sec = d.getSeconds();
+      if (sec <10) {
+          return "0"+sec
+      }
+      if (min <10) {
+          return "0"+min
+      }
+      if (hour <10) {
+          return "0"+hour
+      }
+	  document.getElementById("time").innerHTML=day + " " + date + "-" + month + "-" + year + " " + hour + ":" + min + ":" + sec;
+    }
+  </script>
+</head>
+
+<body>
+   <p id="time"></p>
+   <style>
+       #time{
+           text-align:center;
+           font-size: 40px;
+       }
+   </style>
+ </body>
+</html>
